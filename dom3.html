@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manejador Eventos</title>
+
+<script>
+
+</script>
+</head>
+<body>
+  <h1 id="tit1">Manejando eventos en el DOM</h1>
+
+  <img id="img1" src="./imagen/sad.png" 
+      alt="cara triste" width="100" height="100" />
+
+  <ul>
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+  </ul>
+  <input id="nro1" placeholder="Escriba algo" />
+  <input id="nro2" placeholder="Escriba algo" />
+  <button id="btnCalcula">Calcular</button>
+
+  <p id="resultado"></p>
+
+  <script>
+    //Inicio de JavaScript
+    function Calcular() {
+      const n1 = document.querySelector("#nro1");
+      const n2 = document.querySelector("#nro2");
+      const parr = document.querySelector("#resultado");
+      
+      let suma = n1.value + n2.value;
+      parr.innerHTML = suma;
+    }
+
+    function ColorLi(obj, color) {
+    obj.style.color = color;
+  }
+
+
+    //Inicializar los objetos que serán manipulados
+    const n1 = document.querySelector("#nro1");
+    const n2 = document.querySelector("#nro2");
+    const btn1 = document.querySelector("#btnCalcula");
+    const parr = document.querySelector("#resultado");
+    const imagen1 = document.querySelector("#img1");
+    const misLi = document.querySelectorAll("li");
+
+    for(let i=0; i<misLi.length; i++) {
+      misLi[i].addEventListener("mouseover", function() {ColorLi(this,"blue")} );
+      misLi[i].addEventListener("mouseout", function() {ColorLi(this,"black")} );
+    }
+
+      
+   //Poner a escuchar los EVENTOS
+   btn1.addEventListener("click", Calcular);
+   imagen1.addEventListener("mouseover",function() 
+                                        { CambiaTamano(30,40,this)}
+                                          )
+    imagen1.addEventListener("mouselost",function() 
+                                        { CambiaTamano(100,100,this)}
+                                          )
+    
+    function CambiaTamano(ancho, alto, laImagen){
+   //   const objImagen = document.getElementById("img1");
+   //   const objImagen = document.querySelector("#img1");
+      laImagen.width = ancho;
+      laImagen.height = alto;
+    }
+
+  </script>
+</body>
+</html>
