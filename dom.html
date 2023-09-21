@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manejo del DOM</title>
+    <script src="miScript2.js"></script>
+
+</head>
+<body>
+    <h1>Interactuando con el DOM</h1>
+    <p id="miParrafo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi autem asperiores dolorem, nostrum ex ut quasi, expedita est aliquam sit deleniti aliquid! Ea quis odit vitae alias iste perspiciatis ad.
+    Ab earum, optio delectus dolores excepturi dolor. Inventore, ratione consequatur rerum illo tenetur ipsam asperiores minus iste accusantium molestiae ab. Illum fuga facere, culpa reiciendis deleniti corrupti earum recusandae harum!</p>
+    <img id="miImagen" src="./imagen/bart.jpg" width="100" height="120" 
+         onmouseover="CambiaImagen('./imagen/lisa.png')"
+         onmouseout ="CambiaImagen('./imagen/bart.jpg')"/>
+    <p>Figura1: Imagen de los Simpson</p>
+    <button onclick="CambiaColor()">Color</button>
+    <button onclick="CambiaTamano()">Tamaño</button>
+
+    <button onclick="CambiaTextoParrafos()">Cambia tamaño Parrafos</button>
+
+    <br>
+    <input type="text" id="tel" 
+           onchange="console.log('cambió el input')"
+           onblur="console.log('se fue de aquí')"
+           onfocus="console.log('Llegó aquí')"/>
+</body>
+</html>
